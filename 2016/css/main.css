@@ -336,24 +336,26 @@ footer {
 .image_izquierda{
 	border: 0px solid green;
 	float: left;
-	width: 110px;
-	z-index: 1009;
+	width: 96px;
+	z-index: 1010;
 	position: fixed;
-	background-image: url('../images/img_izq.jpg')  !important; 
+	background-image: url('../images/bkg_izq.png')  !important; 
 	background-repeat:no-repeat;
 	top:0px;
 	bottom: 0px;
-	left: -15px;
+	min-height: 700px;
+	
 }
 
 .image_derecha{
 	border: 0px solid blue;
 	float: right !important;
-	width: 85px;
+	width: 96px;
+	min-height: 700px;
 	z-index: 1009;
 	position: fixed;
 	right: 0px;
-	background-image: url('../images/img_der.jpg')  !important; 
+	background-image: url('../images/bkg_der.png')  !important; 
 	background-repeat: no-repeat;
 	top:0px;
 	bottom: 0px;

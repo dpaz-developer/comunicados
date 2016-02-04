@@ -13,6 +13,7 @@
 		public $status;
 		public $userLoadId;
 		public $urlImageMain;
+		public $urlImageDetail;
 	}
 
 ?>

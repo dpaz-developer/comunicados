@@ -32,19 +32,19 @@
         <div id="detalle_nota">
         <div class="jumbotron">
           <h1><?php echo $objNotice->title ?></h1>
-          <p class="lead"><img  src="http://blogsportcity.com.mx/wp-content/uploads/2016/01/Servicios-SC.jpg"/></p>
+          <p class="lead"><img  src="<?php echo $objNotice->urlImageDetail ?>"/></p>
         </div>
         <div class="jumbotron">
           <div class="row">
             <div class="col-xs-6 col-lg-12 ">
              <div class="detalle_notice_header">
-                <h3><?php echo $objNotice->title ?> <small>[ <?php echo date_format(new DateTime($objNotice->dateRegistration), 'd/m/y'); ?> ]</small></h3> 
+                <h3><?php echo $objNotice->title ?> <small>[ <?php echo $objNotice->dateRegistration; ?> ]</small></h3> 
                 <div class="media">
                     <div class="media-left">
                         <img class="media-object" src="<?php echo $objNotice->urlImageMain ?>" alt="...">
                     </div>
                     <div class="media-body">
-                      <p><?php echo $objNotice->summary ?> <?php echo $objNotice->summary ?> </p>
+                      <p><?php echo $objNotice->summary ?> </p>
                     </div>
                 </div>
               </div>
