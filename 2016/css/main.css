@@ -36,10 +36,21 @@ footer {
 	text-align: top;
 	border-top: 3px solid #15a3e5 !important;
 	width: 100% !important;
-	background-image: url('../images/footer.jpg') !important;
-    background-repeat: no-repeat;
+	/*background-image: url('../images/footer.jpg') !important;*/
+    /*background-repeat: no-repeat;*/
     position: absolute !important;
+    padding-left: 650px;
 	
+}
+footer li{
+	display: inline-block;
+	width: 100px;
+	height: 75px;
+	padding: 15px;
+}
+footer li img{
+	max-width: 100px !important;
+	max-height: 75px !important;
 }
 
 /* Main marketing message and sign up button */
@@ -218,19 +229,30 @@ footer {
 	display: inline-table;
 }
 
-.notice_image{
-	width:273px ;
-	height: 180px;
+.notice_image img{
+	max-width:273px !important ;
+	max-height: 180px !important;
 	display: inline-block;
 	overflow: hidden;
 }
-.notice_secondary_image{
-	width: 250px;
-	height: 160px;
+.sub_noticia img{
+	max-width: 250px !important;
+	max-height: 160px !important;
 	display: inline-block;
 	overflow: hidden;
 	border-top: 10px;
 }
+
+/*
+.notice_secondary_image{
+	max-width: 250px !important;
+	max-height: 160px !important;
+	display: inline-block;
+	overflow: hidden;
+	border-top: 10px;
+}
+
+*/
 
 .notice_main_resumen{
 	width: 67%;
