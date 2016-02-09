@@ -2,12 +2,12 @@
 .navbar-static-top {
   	margin-bottom: 19px;
   	z-index: 1219 !important;
-  	background-color: #FCF5EB !important;
+  	background-color: #FFF !important;
 }
 .navbar-default {
     border-color: #e7e7e7;
     border-bottom: 3px solid #15a3e5 !important;
-    background-color: #FCF5EB !important;
+    background-color: #FFF !important;
 }
 
 html{
@@ -16,7 +16,7 @@ html{
 
 body {
  	padding-top: 0px;
-  	background-color: #fef9f3 !important;
+  	background-color: #FFF !important;
   	height: 100%;
 }
 #wrapper{	
@@ -29,7 +29,7 @@ body {
 
 footer {
 	min-height: 90px !important;
-	background-color: #FCF5EB !important;
+	background-color: #FFF !important;
 	padding-bottom: 0px !important;
 	right: 0px;
 	left: 0px;
@@ -411,6 +411,26 @@ hr{
 }
 .detalle_notice_header{	
 }
+
+.detalle_notice_header .detalle_remate{
+	text-align: center;
+}
+.detalle_remate h4{
+	margin-top: 0px !important;
+	color: #00529c;
+	font-family: Arial;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+.detalle_notice_header .detalle_fecha{
+	text-align: center;
+}
+.detalle_notice_header .detalle_body{
+	text-align: justify;
+	margin: 0 auto 0 auto;
+}
+
 .jumbotron{
 	padding-top: 0px !important;
 	padding-bottom: 5px !important;

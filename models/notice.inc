@@ -14,6 +14,8 @@
 		public $userLoadId;
 		public $urlImageMain;
 		public $urlImageDetail;
+		public $subtitle;
+		public $urlDocumentAtach;
 	}
 
 ?>

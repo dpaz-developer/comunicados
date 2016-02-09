@@ -35,28 +35,42 @@
           <p class="lead"><img  src="<?php echo $objNotice->urlImageDetail ?>"/></p>
         </div>
         <div class="jumbotron">
+          <?php if(!empty(trim($objNotice->subtitle))) { ?>
+          <!-- Remate -->
           <div class="row">
             <div class="col-xs-6 col-lg-12 ">
              <div class="detalle_notice_header">
-                <h3><?php echo $objNotice->title ?> <small>[ <?php echo $objNotice->dateRegistration; ?> ]</small></h3> 
-                <div class="media">
-                    <div class="media-left">
-                        <img class="media-object" src="<?php echo $objNotice->urlImageMain ?>" alt="...">
-                    </div>
-                    <div class="media-body">
-                      <p><?php echo $objNotice->summary ?> </p>
-                    </div>
+                <div class="detalle_remate">
+                <h4><?php echo $objNotice->subtitle ?></h4> 
                 </div>
               </div>
             </div><!--/.col-xs-6.col-lg-4-->         
           </div><!--/row-->
+          <?php } ?>
+
+          <?php if(!empty(trim($objNotice->body))) { ?>
+          <!-- detalle -->
           <div class="row">
             <div class="col-xs-6 col-lg-12 ">
-              <div class="detalle_notice_header"> 
-                   <p><?php echo $objNotice->body?></p>                
+              <div class="detalle_notice_header">
+                <div class="detalle_body"> 
+                  <p><?php echo $objNotice->body?></p>                
+                </div>
                </div>
             </div><!--/.col-xs-6.col-lg-4-->         
           </div><!--/row-->
+          <?php } ?>
+          <!-- Fecha -->
+          <div class="row">
+            <div class="col-xs-6 col-lg-12 ">
+              <div class="detalle_notice_header"> 
+                  <div class="detalle_fecha">
+                    <h4><small>[ <?php echo $objNotice->dateRegistration; ?> ]</small></h4>                
+                  </div>
+               </div>
+            </div><!--/.col-xs-6.col-lg-4-->         
+          </div><!--/row-->
+
         </div> 
       </div>
 
