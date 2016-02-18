@@ -236,11 +236,11 @@ footer li img{
 	overflow: hidden;
 }
 .sub_noticia img{
-	max-width: 250px !important;
-	max-height: 160px !important;
+	max-width: 200px !important;
+	max-height: 130px !important;
 	display: inline-block;
 	overflow: hidden;
-	border-top: 10px;
+	/*border-top: 10px;*/
 }
 
 /*
@@ -286,12 +286,13 @@ footer li img{
 .sub_noticia{	
 	border: 0px solid green;
 	display:inline-block;
-	margin-bottom: 10px;
+	margin-bottom: 30px;
+	width: 100%;
 }
 .noticia_secondary_summary{
 	border: 0px solid red;
 	display: inline-block;
-	width: 54%;
+	width: 50%;
 	vertical-align: top;
 	
 }

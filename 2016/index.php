@@ -54,9 +54,9 @@
           echo   '    <div class="sub_noticia"> <a href="nota.php?id='.$objNotice->id.'">';
           echo   '     <img class="notice_secondary_image" src="'.$objNotice->urlImageMain.'"/>';
           echo   '       <div class="noticia_secondary_summary">';
-          echo   '         <h3>'.truncateString($objNotice->title, 50).'</h3>';
+          echo   '         <h3>'.truncateString($objNotice->title, 45).'</h3>';
           echo   '          <p>';
-          echo   '           '.truncateString($objNotice->summary, 200).'</p>';
+          echo   '           '.truncateString($objNotice->summary, 190).'</p>';
           echo   '       </div></a>';
           echo   '    </div>';
           echo   '  </div><!--/.col-xs-6.col-lg-4-->';
