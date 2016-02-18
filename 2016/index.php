@@ -45,8 +45,9 @@
           echo   '    <hr>';
 
           echo createPagination($objNoticeController->objNoticeService->totalNotices, $offset); 
+           
 
-          echo   '<div class="row">';
+          echo   '<br><div class="row">';
 
       }else{
 
@@ -65,6 +66,9 @@
         $primernoticia ++;
     }
      echo '</div><!--/row-->';
+
+     echo createPagination($objNoticeController->objNoticeService->totalNotices, $offset); 
+
   }else{?>
     
         <br><br>

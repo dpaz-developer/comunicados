@@ -242,6 +242,9 @@ footer li img{
 	overflow: hidden;
 	/*border-top: 10px;*/
 }
+.sub_noticia a{
+	text-decoration: none !important;
+}
 
 /*
 .notice_secondary_image{
@@ -392,6 +395,7 @@ hr{
 
 #search_paginacion{
 	margin-left: 25px;
+	margin-bottom: 15px;
 }
 #search_paginacion div {
 	display: inline-block;

@@ -69,10 +69,12 @@
     	$currentPage = ($offset/TAMANIO_DE_PAGINA)+1;
     	$inicioResultados = $offset+1;
     	$finResultados = ($currentPage*TAMANIO_DE_PAGINA > $totalItems) ? $totalItems : $currentPage*TAMANIO_DE_PAGINA;
-    	$result = '<div id="search_paginacion">'.
-      			'<div>  Mostrando <b>'.$inicioResultados.'</b>  - <b>'.$finResultados.'</b>  de <b>'.$totalItems.'</b> resultados encontrados. </div>';
+    
 
   	if ($numPages > 1){
+
+        $result = '<div id="search_paginacion">'.
+            '<div>  Mostrando <b>'.$inicioResultados.'</b>  - <b>'.$finResultados.'</b>  de <b>'.$totalItems.'</b> resultados encontrados. </div>';
 
       	$result = $result.'<nav>'.
   		  '<ul class="pagination pagination-sm">';
@@ -99,11 +101,13 @@
   		    '<a href="?'.getVarsUrl().'&offset='.getNextPage($currentPage).'" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>';
   		  
   		$result = $result.'</ul>'.
-  		'</nav>' ;     
+  		'</nav>' ;   
+
+        $result = $result.'</div>';  
 
   	}
 
-  	$result = $result.'</div>';
+  
   }
 	return $result;
   }
