@@ -32,7 +32,31 @@
         <div id="detalle_nota">
         <div class="jumbotron">
           <h1><?php echo $objNotice->title ?></h1>
-          <p class="lead"><img  src="<?php echo $objNotice->urlImageDetail ?>"/></p>
+          <p class="lead"><img  src="<?php echo $objNotice->urlImageDetail ?>"/>
+            <!--Download documents -->
+              <div class="detalle_notice_header"> 
+                  <div class="detalle_download_files">
+                    <a href="">
+                    <ul>
+                      <li><span>Ver el documento.</span></li>
+                      <?php 
+                        if ($objNotice->id <= 3) {
+                          $imageDoc = 'excel.jpg';
+                        }
+                         if ($objNotice->id < 7 && $objNotice->id > 3) {
+                          $imageDoc = 'power_point.jpg';
+                        }
+                         if ($objNotice->id >= 7) {
+                          $imageDoc = 'pdf.jpg';
+                        }
+
+                      ?>
+                      <li><img class="detalles_download_icono" src="images/iconos/<?php echo $imageDoc; ?>" /></li>
+                    </ul>
+                    </a>     
+                  </div>
+              </div>
+          </p>
         </div>
         <div class="jumbotron">
           <?php if(!empty(trim($objNotice->subtitle))) { ?>
@@ -48,24 +72,28 @@
           </div><!--/row-->
           <?php } ?>
 
-          <?php if(!empty(trim($objNotice->body))) { ?>
+          <?php //if(!empty(trim($objNotice->body))) { ?>
           <!-- detalle -->
+          <!--
           <div class="row">
             <div class="col-xs-6 col-lg-12 ">
               <div class="detalle_notice_header">
                 <div class="detalle_body"> 
                   <p><?php echo $objNotice->body?></p>                
                 </div>
-               </div>
-            </div><!--/.col-xs-6.col-lg-4-->         
-          </div><!--/row-->
-          <?php } ?>
+               </div> -->
+
+            <!--</div> --><!--/.col-xs-6.col-lg-4-->         
+          <!-- </div> --><!--/row-->
+
+          <?php //} ?>
+          
           <!-- Fecha -->
           <div class="row">
             <div class="col-xs-6 col-lg-12 ">
               <div class="detalle_notice_header"> 
                   <div class="detalle_fecha">
-                    <h4><small>[ <?php echo $objNotice->dateRegistration; ?> ]</small></h4>                
+                    <h4><small>[ <?php echo substr($objNotice->dateRegistration, 0, 10); ?>]</small></h4>                
                   </div>
                </div>
             </div><!--/.col-xs-6.col-lg-4-->         

@@ -479,3 +479,26 @@ hr{
 	width: 250px !important;
 	height: 160px !important;
 }
+
+.detalle_download_files ul{
+	width: 300px;
+	float: right;
+	margin-right: 100px;
+}
+.detalle_download_files li{
+	display: inline-block;
+	text-decoration: none;
+	vertical-align: middle;
+
+}
+.detalle_download_files li img{
+	width: 50px;
+	height: 50px;
+}
+.detalle_download_files a:hover{
+	text-decoration: none;
+
+}
+.detalle_download_files li span{	
+	vertical-align: middle;
+}
