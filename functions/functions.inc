@@ -1,4 +1,5 @@
 <?php
+ date_default_timezone_set('America/Mexico_City');
 
   function calculateNumberPages($totalItems){
     return ceil($totalItems/TAMANIO_DE_PAGINA);
@@ -125,7 +126,7 @@
   }
 
   function getTimeDate($fecha){
-    $result =  "S/F";
+    $result =  "";
 
     try{
       $result = date($fecha);
