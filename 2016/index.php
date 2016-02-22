@@ -20,7 +20,6 @@
     <?php include '../taglibs/header.inc'; ?>
 
 <?php
-
     
     if ($objNoticeController->objNoticeService->totalNotices > 0 ) {
 

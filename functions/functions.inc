@@ -127,40 +127,44 @@
   function getTimeDate($fecha){
     $result =  "S/F";
 
-    $result = date($fecha);
-    $hoy = date('Y-m-d');
+    try{
+      $result = date($fecha);
+      $hoy = date('Y-m-d');
 
-    $segundos= strtotime('now') - strtotime($result);
-    $diferencia_dias=intval($segundos/60/60/24);
+      $segundos= strtotime('now') - strtotime($result);
+      $diferencia_dias=intval($segundos/60/60/24);
 
-    if ($diferencia_dias==0){
-      $result = 'Hoy';
+      if ($diferencia_dias==0){
+        $result = 'Hoy';
+      }
+
+      if ($diferencia_dias>0){
+        $result = 'Hace '.$diferencia_dias.' dias';
+      }
+
+      if ($diferencia_dias >= 7){
+        $result = 'Hace 1 semana';
+      }
+
+      if ($diferencia_dias >= 14 ){
+        $result = 'Hace 2 semana';
+      }
+
+      if ($diferencia_dias >= 28 ){
+        $result = 'Hace 3 semana';
+      }
+
+      if ($diferencia_dias >= 30){
+        $result = 'Hace 1 mes';
+      }
+
+      if ($diferencia_dias > 40){
+        $result = 'Hace mas de 1 mes';
+      }
+    }catch(Exception $e){
+      echo 'a  no me jodas';
+      $result="date_error";
     }
-
-    if ($diferencia_dias>0){
-      $result = 'Hace '.$diferencia_dias.' dias';
-    }
-
-    if ($diferencia_dias >= 7){
-      $result = 'Hace 1 semana';
-    }
-
-    if ($diferencia_dias >= 14 ){
-      $result = 'Hace 2 semana';
-    }
-
-    if ($diferencia_dias >= 28 ){
-      $result = 'Hace 3 semana';
-    }
-
-    if ($diferencia_dias >= 30){
-      $result = 'Hace 1 mes';
-    }
-
-    if ($diferencia_dias > 40){
-      $result = 'Hace mas de 1 mes';
-    }
-
 
     return $result;
   }
