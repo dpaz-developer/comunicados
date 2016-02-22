@@ -24,6 +24,7 @@
     if ($objNoticeController->objNoticeService->totalNotices > 0 ) {
 
     $primernoticia = 0;
+    $primerRenglon = 0;
     foreach ($objNoticeController->objNoticeService->listNotices as $notice){
       $objNotice = new Notice();
       foreach ($notice as $propiedad => $valor) {
@@ -57,9 +58,13 @@
 
       }else{
 
+          if($primerRenglon == 0){
+            echo   '<div class="row">';
+          } else{
 
-          if ( $numNoticiasSinNotaPrincipal%2 != 0 ){
-              echo   '<div class="row">';
+            if ( $numNoticiasSinNotaPrincipal%2 != 0 ){
+                echo   '<hr class="division_notas_listado"><div class="row">';
+            }
           }
 
           echo   '  <div class="col-xs-6 col-lg-6 ">';
@@ -76,7 +81,8 @@
           echo   '  </div><!--/.col-xs-6.col-lg-4-->';
 
           if ( $numNoticiasSinNotaPrincipal%2 == 0 ){
-              echo '</div> <hr class="division_notas_listado"><!--/row-->';
+              echo '</div><!--/row-->';
+              $primerRenglon ++;
           }
           
           $numNoticiasSinNotaPrincipal = $numNoticiasSinNotaPrincipal -1;

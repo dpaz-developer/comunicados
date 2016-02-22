@@ -162,7 +162,6 @@
         $result = 'Hace mas de 1 mes';
       }
     }catch(Exception $e){
-      echo 'a  no me jodas';
       $result="date_error";
     }
 
