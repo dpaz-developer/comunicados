@@ -33,28 +33,21 @@
         <div class="jumbotron">
           <p class="lead"><img  src="<?php echo $objNotice->urlImageDetail ?>"/>
             <!--Download documents -->
-              <div class="detalle_notice_header"> 
-                  <div class="detalle_download_files">
-                    <a href="">
-                    <ul>
-                      <li><span>Ver el documento.</span></li>
-                      <?php 
-                        if ($objNotice->id <= 3) {
-                          $imageDoc = 'excel.jpg';
-                        }
-                         if ($objNotice->id < 7 && $objNotice->id > 3) {
-                          $imageDoc = 'power_point.jpg';
-                        }
-                         if ($objNotice->id >= 7) {
-                          $imageDoc = 'pdf.jpg';
-                        }
-
-                      ?>
-                      <li><img class="detalles_download_icono" src="images/iconos/<?php echo $imageDoc; ?>" /></li>
-                    </ul>
-                    </a>     
-                  </div>
-              </div>
+            <?php 
+             $imageDoc = 'pdf.jpg';
+             if (!empty($objNotice->urlDocumentAtach))  {
+              echo '<div class="detalle_notice_header"> ';
+              echo '    <div class="detalle_download_files">';
+              echo '      <a href="">';
+              echo '      <ul>';
+              echo '        <li><span>Ver el documento.</span></li>';
+              echo '        <li><img class="detalles_download_icono" src="images/iconos/'.$imageDoc.'" /></li>';
+              echo '      </ul>';
+              echo '      </a>';  
+              echo '    </div>';
+              echo '</div>';
+            }
+            ?>
           </p>
         </div>
         <div class="jumbotron">
