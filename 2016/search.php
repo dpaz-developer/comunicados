@@ -41,6 +41,7 @@
       echo   '        </div>';
       echo   '        <div class="notice_main_resumen">';
       echo   '          <h2 class="titulo_limitado">'.$objNotice->title.'</h2>';
+      echo   '            <small> '.getTimeDate(substr($objNotice->dateRegistration, 0, 10)).'</small>';
       echo   '          <p>'.$objNotice->summary.'</p>';
       echo   '        </div> </a>';
       echo   '      </div>';

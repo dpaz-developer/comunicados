@@ -20,6 +20,7 @@
     <?php include '../taglibs/header.inc'; ?>
 
 <?php
+
     
     if ($objNoticeController->objNoticeService->totalNotices > 0 ) {
 
@@ -38,6 +39,7 @@
           echo   '        </div>';
           echo   '        <div class="notice_main_resumen">';
           echo   '          <h2 class="titulo_limitado">'.$objNotice->title.'</h2>';
+          echo   '            <small> '.getTimeDate(substr($objNotice->dateRegistration, 0, 10)).'</small>';
           echo   '          <p>'.$objNotice->summary.'</p>';
           echo   '        </div> </a>';
           echo   '      </div>';
@@ -47,25 +49,42 @@
           echo createPagination($objNoticeController->objNoticeService->totalNotices, $offset); 
            
 
-          echo   '<br><div class="row">';
+          echo   '<br>';
+
+          $numNoticiasSinNotaPrincipal = $objNoticeController->objNoticeService->totalNotices - 1;
+          if( $numNoticiasSinNotaPrincipal%2 == 0){
+            $numNoticiasSinNotaPrincipal = $numNoticiasSinNotaPrincipal + 1;
+          }
 
       }else{
+
+
+          if ( $numNoticiasSinNotaPrincipal%2 != 0 ){
+              echo   '<div class="row">';
+          }
 
           echo   '  <div class="col-xs-6 col-lg-6 ">';
           echo   '    <div class="sub_noticia"> <a href="nota.php?id='.$objNotice->id.'">';
           echo   '     <img class="notice_secondary_image" src="'.$objNotice->urlImageMain.'"/>';
           echo   '       <div class="noticia_secondary_summary">';
           echo   '         <h3>'.truncateString($objNotice->title, 45).'</h3>';
+          echo   '            <small> '.getTimeDate(substr($objNotice->dateRegistration, 0, 10)).'</small>';
           echo   '          <p>';
-          echo   '           '.truncateString($objNotice->summary, 190).'</p>';
-          echo   '       </div></a>';
+          echo   '           '.truncateString($objNotice->summary, 117).'</p>';          
+          echo   '       </div>';
+          echo   '       </a>';
           echo   '    </div>';
           echo   '  </div><!--/.col-xs-6.col-lg-4-->';
+
+          if ( $numNoticiasSinNotaPrincipal%2 == 0 ){
+              echo '</div> <hr class="division_notas_listado"><!--/row-->';
+          }
           
+          $numNoticiasSinNotaPrincipal = $numNoticiasSinNotaPrincipal -1;
       }
         $primernoticia ++;
     }
-     echo '</div><!--/row-->';
+     
 
      echo createPagination($objNoticeController->objNoticeService->totalNotices, $offset); 
 

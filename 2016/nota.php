@@ -31,7 +31,6 @@
       if ($objNotice->id){ ?>
         <div id="detalle_nota">
         <div class="jumbotron">
-          <h1><?php echo $objNotice->title ?></h1>
           <p class="lead"><img  src="<?php echo $objNotice->urlImageDetail ?>"/>
             <!--Download documents -->
               <div class="detalle_notice_header"> 
@@ -59,34 +58,7 @@
           </p>
         </div>
         <div class="jumbotron">
-          <?php if(!empty(trim($objNotice->subtitle))) { ?>
-          <!-- Remate -->
-          <div class="row">
-            <div class="col-xs-6 col-lg-12 ">
-             <div class="detalle_notice_header">
-                <div class="detalle_remate">
-                <h4><?php echo $objNotice->subtitle ?></h4> 
-                </div>
-              </div>
-            </div><!--/.col-xs-6.col-lg-4-->         
-          </div><!--/row-->
-          <?php } ?>
-
-          <?php //if(!empty(trim($objNotice->body))) { ?>
-          <!-- detalle -->
-          <!--
-          <div class="row">
-            <div class="col-xs-6 col-lg-12 ">
-              <div class="detalle_notice_header">
-                <div class="detalle_body"> 
-                  <p><?php echo $objNotice->body?></p>                
-                </div>
-               </div> -->
-
-            <!--</div> --><!--/.col-xs-6.col-lg-4-->         
-          <!-- </div> --><!--/row-->
-
-          <?php //} ?>
+          
           
           <!-- Fecha -->
           <div class="row">

@@ -40,6 +40,7 @@ footer {
     /*background-repeat: no-repeat;*/
     position: absolute !important;
     padding-left: 650px;
+    margin-top: 25px;
 	
 }
 footer li{
@@ -236,7 +237,7 @@ footer li img{
 	overflow: hidden;
 }
 .sub_noticia img{
-	max-width: 200px !important;
+	min-width: 200px !important;
 	max-height: 130px !important;
 	display: inline-block;
 	overflow: hidden;
@@ -267,6 +268,11 @@ footer li img{
 	padding-left: 10px;
 	text-align: justify;
 }
+.notice_main_resumen small{
+	font-size: 12px;
+	color: #CCC;
+	margin-left: 10px;
+}
 
 .notice_secondary_resumen{
 	vertical-align: top;
@@ -289,29 +295,38 @@ footer li img{
 .sub_noticia{	
 	border: 0px solid green;
 	display:inline-block;
-	margin-bottom: 30px;
+	margin-bottom: 0px;
 	width: 100%;
 }
 .noticia_secondary_summary{
-	border: 0px solid red;
 	display: inline-block;
 	width: 50%;
 	vertical-align: top;
+	height: 128px;
 	
 }
+
 .noticia_secondary_summary h3{
-	margin-top: 0px !important;
+	margin-top: 1px !important;
 	color: #00529c;
 	font-family: Arial;
 	font-size: 13pt;
 	font-weight: bold;
 	padding-left: 6px;
+	margin-bottom: 0px !important;
 }
 .noticia_secondary_summary p {
 	color:#393838;
 	font-size: 10pt;
 	padding-left: 6px;
+	margin-bottom: 0px;
 	text-align: justify;
+}
+
+.noticia_secondary_summary small{
+	font-size: 10px;
+	color: #CCC;
+	margin-left: 6px;
 }
 
 .navbar-brand{
@@ -357,6 +372,7 @@ footer li img{
 	font-size: 18pt;
 	font-weight: bold;
 	padding-left: 10px;
+	margin-bottom: 0px !important;
 }
 
 .image_izquierda{
@@ -389,6 +405,10 @@ footer li img{
 
 hr{
 	border: 2px solid #CCC;
+}
+
+.division_notas_listado{
+	border: 0.05em solid #CCC !important;
 }
 
 /******************* estilos para la paginacion ******************************************/
