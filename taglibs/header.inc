@@ -18,13 +18,10 @@
           <a href="index.php?s=1">AVISOS</a>
         </li>
         <li <?php echo ($sectionId == 2)? 'class="active_section"': '' ; ?>>
-          <a href="index.php?s=2"><span>LO QUE TENEMOS QUE CUMPLIR</span></a>
+          <a href="index.php?s=2"><span>LO M&AacuteS DESTACADO</span></a>
         </li>
         <li <?php echo ($sectionId == 3)? 'class="active_section"': '' ; ?>>
-          <a href="index.php?s=3"><span>LO QUE QUEREMOS COMUNICAR</span></a>
-        </li>
-        <li <?php echo ($sectionId == 4)? 'class="active_section"': '' ; ?>>
-          <a href="index.php?s=4"><span>LO QUE QUEREMOS SABER</span></a>
+          <a href="index.php?s=3"><span>CALENDARIO DE CIERRE DE MES</span></a>
         </li>
       </ul>
     </div><!--/.nav-collapse -->

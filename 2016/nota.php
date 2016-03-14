@@ -38,7 +38,7 @@
              if (!empty($objNotice->urlDocumentAtach))  {
               echo '<div class="detalle_notice_header"> ';
               echo '    <div class="detalle_download_files">';
-              echo '      <a href="">';
+              echo '      <a target="blank" href="'.$objNotice->urlDocumentAtach.'">';
               echo '      <ul>';
               echo '        <li><span>Ver el documento.</span></li>';
               echo '        <li><img class="detalles_download_icono" src="images/iconos/'.$imageDoc.'" /></li>';

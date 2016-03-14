@@ -522,3 +522,8 @@ hr{
 .detalle_download_files li span{	
 	vertical-align: middle;
 }
+
+
+.row {
+    margin-left: 0px !important;
+}
