@@ -15,7 +15,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li <?php echo ($sectionId == 1)? 'class="active_section"': '' ; ?>>
-          <a href="index.php?s=1">AVISOS</a>
+          <a href="index.php?s=1">LO M&AacuteS NUEVO</a>
         </li>
         <li <?php echo ($sectionId == 2)? 'class="active_section"': '' ; ?>>
           <a href="index.php?s=2"><span>LO M&AacuteS DESTACADO</span></a>

@@ -71,7 +71,7 @@
           echo   '    <div class="sub_noticia"> <a href="nota.php?id='.$objNotice->id.'">';
           echo   '     <img class="notice_secondary_image" src="'.$objNotice->urlImageMain.'"/>';
           echo   '       <div class="noticia_secondary_summary">';
-          echo   '         <h3>'.truncateString($objNotice->title, 45).'</h3>';
+          echo   '         <h3>'.truncateString($objNotice->title, 47).'</h3>';
           echo   '            <small> '.getTimeDate(substr($objNotice->dateRegistration, 0, 10)).'</small>';
           echo   '          <p>';
           echo   '           '.truncateString($objNotice->summary, 117).'</p>';          
