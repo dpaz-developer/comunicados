@@ -1,0 +1,32 @@
+-- --------------------------------------------------------------------------------
+-- Routine DDL
+-- Note: comments before and after the routine body will not be stored by the server
+-- --------------------------------------------------------------------------------
+DELIMITER $$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_edit_nota`(
+	IN v_id INT,	
+	IN v_title varchar(400),
+	IN v_body varchar(4000),
+	IN v_summary varchar(2000),
+	IN v_sectionId int,
+	IN v_userLoadId int,
+	IN v_urlImageMain varchar(300),
+	IN v_urlImageDetail varchar(300),
+	IN v_subtitle varchar(400),
+	IN v_urlDocumentAtach varchar(300)
+)
+BEGIN
+	
+		UPDATE notices SET title=v_title, body=v_body, summary=v_summary, sectionId=v_sectionId,
+		dateUpdate=now(),  urlImageMain=v_urlImageMain, urlImageDetail = v_urlImageDetail, 
+		subtitle = v_subtitle, urlDocumentAtach = v_urlDocumentAtach, dateRegistration = dateRegistration
+		WHERE id = v_id;
+		
+		SELECT id, title, body, summary, sectionId, dateRegistration, status, userLoadId, urlImageMain, urlImageDetail,
+		subtitle, urlDocumentAtach
+		FROM notices
+		WHERE id = v_id;
+
+	
+END

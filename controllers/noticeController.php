@@ -17,6 +17,15 @@
 			$this->objNoticeService->getNotice($noticeId);
 		}
 
+		public function setNotice($seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $status, $userId){
+			$this->objNoticeService->setNotice($seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $status, $userId);
+		}
+		public function  editNotice($id, $seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $userId){
+			$this->objNoticeService->editNotice($id, $seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $userId);
+		}
+
+		
+
 		function __destruct(){
 			unset($this);
 		}

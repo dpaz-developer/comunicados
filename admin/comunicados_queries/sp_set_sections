@@ -1,0 +1,17 @@
+-- --------------------------------------------------------------------------------
+-- Routine DDL
+-- Note: comments before and after the routine body will not be stored by the server
+-- --------------------------------------------------------------------------------
+DELIMITER $$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_set_sections`(
+IN sectionName varchar(100)
+)
+BEGIN
+		IF NOT EXISTS (SELECT id FROM sections WHERE section = sectionName) THEN
+			INSERT INTO sections (section, dateRegistration, status) VALUES (sectionName, now(), 'active');
+			SELECT id, section, status FROM sections WHERE id = last_insert_id();
+		ELSE
+			SELECT id, section, status FROM sections WHERE section = sectionName;
+		END IF;
+END

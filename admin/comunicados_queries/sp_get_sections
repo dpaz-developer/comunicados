@@ -1,0 +1,14 @@
+-- --------------------------------------------------------------------------------
+-- Routine DDL
+-- Note: comments before and after the routine body will not be stored by the server
+-- --------------------------------------------------------------------------------
+DELIMITER $$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_get_sections`()
+BEGIN
+	
+	SELECT id, section, status, dateRegistration
+	FROM sections
+	WHERE status = 'active';
+
+END

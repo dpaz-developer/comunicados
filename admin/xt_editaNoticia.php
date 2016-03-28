@@ -3,6 +3,7 @@
 	require_once('../controllers/noticeController.php');
   	require_once('../functions/functions.inc');
 
+  	$noticeId 		= $_POST['noticeId'];
   	$seccionId 		= $_POST['inputSeccionId'];
 	$title 			= $_POST['inputTitle'];
 	$summary 		= $_POST['inputSummary'];
@@ -10,9 +11,21 @@
 	$urlImgInterior = $_POST['picInterior'];
 	$status			= 'deactive';
 	$userId			= 1;
+
+	echo '<br> Los datos a modificar';
+	echo '<br>'.$noticeId;
+	echo '<br>'.$seccionId;
+	echo '<br>'.$title;
+	echo '<br>'.$summary;
+	echo '<br>'.$urlImgListado;
+	echo '<br>'.$urlImgInterior;
+	echo '<br>'.$status;
+	echo '<br>'.$userId;
 	
+	
+	/*
 	$objNoticeController = new NoticeController();
-  	$objNoticeController->setNotice($seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $status, $userId);
+  	$objNoticeController->editNotice($noticeId, $seccionId, $title, $summary, $urlImgListado, $urlImgInterior,  $userId);
 
   	$objNotice = new Notice();
 
@@ -26,18 +39,10 @@
 
 	
 
-	//echo '<br>La noticia creada fue'.$objNotice->id;
 	$url_redirect = 'dashboard.php?searchid='.$objNotice->id;
 	header('Location:'.$url_redirect);
-	
-	/*echo '<br><b>seccion_id:</b>'.$objNotice->id;
-	
-
-	echo '<br><b>titulo:</b>'.$title;
-	echo '<br><b>resumen:</b>'.$summary;
-	echo '<br><b>imagen_listado:</b> <br> <img src="'.$urlImgListado.'" />';
-	echo '<br><b>imagen_principal:</b><br> <img src="'.$urlImgInterior.'" />'
 	*/
+	
 	
 
 ?>

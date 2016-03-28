@@ -18,7 +18,7 @@
 
 		public function getAll(){
 
-			$this->query = "SELECT * FROM sections";
+			$this->query = "CALL sp_get_sections ()";
 			$this->getResultFromQuery();	
 			if(count($this->rows) > 0){
 					$list_sections = array();

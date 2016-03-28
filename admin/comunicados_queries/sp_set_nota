@@ -1,0 +1,46 @@
+-- --------------------------------------------------------------------------------
+-- Routine DDL
+-- Note: comments before and after the routine body will not be stored by the server
+-- --------------------------------------------------------------------------------
+DELIMITER $$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_set_nota`(
+	IN v_title varchar(400),
+	IN v_body varchar(4000),
+	IN v_summary varchar(2000),
+	IN v_sectionId int,
+	IN v_status varchar(50),
+	IN v_userLoadId int,
+	IN v_urlImageMain varchar(300),
+	IN v_urlImageDetail varchar(300),
+	IN v_subtitle varchar(400),
+	IN v_urlDocumentAtach varchar(300)
+)
+BEGIN
+	DECLARE idNotice INT;
+	IF NOT EXISTS (SELECT id FROM notices WHERE title = v_title AND sectionId = v_sectionId) THEN
+	BEGIN
+		INSERT INTO notices (title, body, summary, sectionId,dateRegistration, status, userLoadId, urlImageMain, urlImageDetail, subtitle, urlDocumentAtach)
+		VALUES (v_title, v_body, v_summary, v_sectionId, now(), v_status, v_userLoadId, v_urlImageMain, v_urlImageDetail, v_subtitle, v_urlDocumentAtach);
+		
+		SELECT id, title, body, summary, sectionId, dateRegistration, status, userLoadId, urlImageMain, subtitle, urlDocumentAtach
+		FROM notices
+		WHERE id = last_insert_id();
+	END;
+	ELSE
+	BEGIN
+		SET idNotice = (SELECT id FROM notices WHERE title = v_title AND sectionId = v_sectionId LIMIT 1);
+		
+		UPDATE notices SET title=v_title, body=v_body, summary=v_summary, sectionId=v_sectionId,
+		dateUpdate=now(), status=v_status, urlImageMain=v_urlImageMain, urlImageDetail = v_urlImageDetail, 
+		subtitle = v_subtitle, urlDocumentAtach = v_urlDocumentAtach
+		WHERE id = idNotice;
+		
+		SELECT id, title, body, summary, sectionId, dateRegistration, status, userLoadId, urlImageMain, urlImageDetail,
+		subtitle, urlDocumentAtach
+		FROM notices
+		WHERE id = idNotice;
+	END;
+	END IF;
+	
+END

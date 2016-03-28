@@ -48,6 +48,31 @@
 
 		}
 
+		public function setNotice($seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $status, $userId){
+			$this->rows = array();
+			$this->objNotice = new Notice();
+			$this->listNotices = array();
+
+			$this->query = "CALL sp_set_nota ('".$title."','','".$summary."', ".$seccionId.", '".$status."', ".$userId.", '".$urlImgListado."', '".$urlImgInterior."', '', '')";
+			
+			$this->getResultFromQuery();
+
+			$this->pushListNotice();
+		}
+
+		public function editNotice($id, $seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $userId){
+			
+			$this->rows = array();
+			$this->objNotice = new Notice();
+			$this->listNotices = array();
+
+			$this->query = "CALL sp_edit_nota (".$id.",'".$title."','','".$summary."', ".$seccionId.", ".$userId.", '".$urlImgListado."', '".$urlImgInterior."', '', '')";
+			
+			$this->getResultFromQuery();
+
+			$this->pushListNotice();
+		}
+
 		private function pushListNotice(){
 
 			if(count($this->rows) > 0){
