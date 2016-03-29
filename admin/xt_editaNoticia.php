@@ -12,6 +12,7 @@
 	$status			= 'deactive';
 	$userId			= 1;
 
+	/*
 	echo '<br> Los datos a modificar';
 	echo '<br>'.$noticeId;
 	echo '<br>'.$seccionId;
@@ -22,8 +23,8 @@
 	echo '<br>'.$status;
 	echo '<br>'.$userId;
 	
+	*/
 	
-	/*
 	$objNoticeController = new NoticeController();
   	$objNoticeController->editNotice($noticeId, $seccionId, $title, $summary, $urlImgListado, $urlImgInterior,  $userId);
 
@@ -41,7 +42,7 @@
 
 	$url_redirect = 'dashboard.php?searchid='.$objNotice->id;
 	header('Location:'.$url_redirect);
-	*/
+	
 	
 	
 

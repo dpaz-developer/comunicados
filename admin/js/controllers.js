@@ -11,6 +11,12 @@ function ComunicadosAdminController ($scope,$http, $q, $upload,$timeout,$filter,
     $scope.bnnrSection = "laseccion";
 
 
+    $scope.editNota = function(urlImageMain, urlImageDetails){
+        $scope.urlPic[0] = urlImageMain;
+        $scope.urlPic[1] = urlImageDetails;
+    };
+
+
     /* **** Para el tratado de la imagenes *********/
 
 

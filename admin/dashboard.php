@@ -146,7 +146,7 @@
 		  								echo '<td>';
 			  							echo '	<ul>';
 			  							echo '		<li><a href="Activar">Activar</a></li>';
-			  							echo '		<li><a href="#" data-toggle="modal" data-target="#myModalEdit" >Modificar</a></li>';
+			  							echo "		<li><a href=\"#\" ng-click=\"editNota('".$objNotice->urlImageMain."','".$objNotice->urlImageDetail."');\" data-toggle=\"modal\" data-target=\"#myModalEdit\" >Modificar</a></li>";
 			  							echo '		<li><a href="#"  data-toggle="modal" data-target="#myModal">Ver Imagen</a></li>';
 			  							echo '	</ul>';
 			  							echo '</td>';
@@ -292,14 +292,14 @@
 										  		<label>Listado</label>
 							                    <input id="picture_0" class="upload" type="file" ng-file-select="onFileSelect($files,0)" multiple accept="image/*" data-multiple="true">
 							                    <img ng-show="urlPic[0] != ''" ng-src="{{urlPic[0]}}" class="img-rounded">
-							                    <img ng-show="urlPic[0] == ''" ng-src="<?php echo $objNotice->urlImageMain; ?>" class="img-rounded">
+							                    <!-- <img ng-show="urlPic[0] == ''" ng-src="<?php echo $objNotice->urlImageMain; ?>" class="img-rounded"> -->
 							                    
 							                </div>
 							                <div class="fileUpload btn_foto">
 										  		<label>Interior</label>
 							                    <input id="picture_1" class="upload" type="file" ng-file-select="onFileSelect($files,1)" multiple accept="image/*" data-multiple="true">
 							                    <img ng-show="urlPic[1] != ''" ng-src="{{urlPic[1]}}" class="img-rounded">
-							                    <img ng-show="urlPic[1] == ''" ng-src="<?php echo $objNotice->urlImageDetail; ?>" class="img-rounded">
+							                    <!-- <img ng-show="urlPic[1] == ''" ng-src="<?php echo $objNotice->urlImageDetail; ?>" class="img-rounded"> -->
 							                    
 							                </div>
 							            </div>
@@ -309,10 +309,8 @@
 
 							    <form class="form-horizontal" action="xt_editaNoticia.php" Method="POST" enctype="multipart/form-data">
 							    	
-							    	<input ng-show="urlPic[0] != ''" type="hidden" name="picListado" value="{{urlPic[0]}}"/>
-							    	<input ng-show="urlPic[0] == ''" type="hidden" name="picListado" value="<?php echo $objNotice->urlImageMain; ?>"/>
-							    	<input ng-show="urlPic[1] != ''" type="hidden" name="picInterior" value="{{urlPic[1]}}"/>
-							    	<input ng-show="urlPic[1] == ''" type="hidden" name="picInterior" value="<?php echo $objNotice->urlImageDetail; ?>"/>
+							    	<input type="hidden" name="picListado" value="{{urlPic[0]}}"/>							    	
+							    	<input type="hidden" name="picInterior" value="{{urlPic[1]}}"/>					
 
 
 							    	<input type="hidden" name="noticeId" value="<?php echo $objNotice->id; ?>">
