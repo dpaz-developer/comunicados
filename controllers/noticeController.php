@@ -17,11 +17,11 @@
 			$this->objNoticeService->getNotice($noticeId);
 		}
 
-		public function setNotice($seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $status, $userId){
-			$this->objNoticeService->setNotice($seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $status, $userId);
+		public function setNotice($seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $status, $userId,$urlDocumentType, $documentType){
+			$this->objNoticeService->setNotice($seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $status, $userId,$urlDocumentType, $documentType);
 		}
-		public function  editNotice($id, $seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $userId){
-			$this->objNoticeService->editNotice($id, $seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $userId);
+		public function  editNotice($id, $seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $userId,$urlDocumentType, $documentType){
+			$this->objNoticeService->editNotice($id, $seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $userId,$urlDocumentType, $documentType);
 		}
 
 		

@@ -48,25 +48,25 @@
 
 		}
 
-		public function setNotice($seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $status, $userId){
+		public function setNotice($seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $status, $userId, $urlDocumentType, $documentType){
 			$this->rows = array();
 			$this->objNotice = new Notice();
 			$this->listNotices = array();
 
-			$this->query = "CALL sp_set_nota ('".$title."','','".$summary."', ".$seccionId.", '".$status."', ".$userId.", '".$urlImgListado."', '".$urlImgInterior."', '', '')";
+			$this->query = "CALL sp_set_nota ('".$title."','','".$summary."', ".$seccionId.", '".$status."', ".$userId.", '".$urlImgListado."', '".$urlImgInterior."', '', '".$urlDocumentType."','".$documentType."')";
 			
 			$this->getResultFromQuery();
 
 			$this->pushListNotice();
 		}
 
-		public function editNotice($id, $seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $userId){
+		public function editNotice($id, $seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $userId, $urlDocumentType, $documentType){
 			
 			$this->rows = array();
 			$this->objNotice = new Notice();
 			$this->listNotices = array();
 
-			$this->query = "CALL sp_edit_nota (".$id.",'".$title."','','".$summary."', ".$seccionId.", ".$userId.", '".$urlImgListado."', '".$urlImgInterior."', '', '')";
+			$this->query = "CALL sp_edit_nota (".$id.",'".$title."','','".$summary."', ".$seccionId.", ".$userId.", '".$urlImgListado."', '".$urlImgInterior."', '', '".$urlDocumentType."','".$documentType."')";
 			
 			$this->getResultFromQuery();
 

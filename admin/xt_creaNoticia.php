@@ -3,16 +3,18 @@
 	require_once('../controllers/noticeController.php');
   	require_once('../functions/functions.inc');
 
-  	$seccionId 		= $_POST['inputSeccionId'];
-	$title 			= $_POST['inputTitle'];
-	$summary 		= $_POST['inputSummary'];
-	$urlImgListado 	= $_POST['picListado'];
-	$urlImgInterior = $_POST['picInterior'];
-	$status			= 'deactive';
-	$userId			= 1;
+  	$seccionId 			= $_POST['inputSeccionId'];
+	$title 				= $_POST['inputTitle'];
+	$summary 			= $_POST['inputSummary'];
+	$urlImgListado 		= $_POST['picListado'];
+	$urlImgInterior 	= $_POST['picInterior'];
+	$status				= 'deactive';
+	$userId				= 1;
+	$urlDocumentType	= $_POST['urlDocument'];
+	$documentType 		= $_POST['documentType'];
 	
 	$objNoticeController = new NoticeController();
-  	$objNoticeController->setNotice($seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $status, $userId);
+  	$objNoticeController->setNotice($seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $status, $userId,$urlDocumentType, $documentType);
 
   	$objNotice = new Notice();
 

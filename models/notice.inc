@@ -16,6 +16,7 @@
 		public $urlImageDetail;
 		public $subtitle;
 		public $urlDocumentAtach;
+		public $documentType;
 	}
 
 ?>

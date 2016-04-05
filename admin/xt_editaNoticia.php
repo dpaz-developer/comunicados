@@ -11,6 +11,8 @@
 	$urlImgInterior = $_POST['picInterior'];
 	$status			= 'deactive';
 	$userId			= 1;
+	$urlDocumentType	= $_POST['urlDocument'];
+	$documentType 		= $_POST['documentType'];
 
 	/*
 	echo '<br> Los datos a modificar';
@@ -26,7 +28,7 @@
 	*/
 	
 	$objNoticeController = new NoticeController();
-  	$objNoticeController->editNotice($noticeId, $seccionId, $title, $summary, $urlImgListado, $urlImgInterior,  $userId);
+  	$objNoticeController->editNotice($noticeId, $seccionId, $title, $summary, $urlImgListado, $urlImgInterior,  $userId, $urlDocumentType, $documentType);
 
   	$objNotice = new Notice();
 

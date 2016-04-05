@@ -50,6 +50,8 @@
 	}
 
 
+
+
 	// obtenemos la noticia que queremos modificar
 	$noticeId  =  isset($_GET['searchid']) ? $_GET['searchid'] : 0 ;
 
@@ -102,7 +104,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Admin - Comunicación interna</a>
+          <a class="navbar-brand" href="#">COMUNICADOS <small>admin</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -117,7 +119,7 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Noticias <span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="dashboard.php">Noticias <span class="sr-only">(current)</span></a></li>
           </ul>
         
         </div>
@@ -220,6 +222,23 @@
 							    <label  class="col-sm-2 control-label">Resumen</label>
 							    <div class="col-sm-10">
 							      <textarea name="inputSummary" class="form-control" rows="3"></textarea>
+							    </div>
+							  </div>
+							   <div class="form-group">
+							    <label for="inputTitle" class="col-sm-2 control-label">Url Documento</label>
+							    <div class="col-sm-10">
+							      <input type="text" name="urlDocument"  class="form-control" id="inputTitle" placeholder="Link documento adjunto">
+							    </div>
+							  </div>
+							  <div class="form-group">
+							    <label for="inputSection" class="col-sm-2 control-label">Tipo de documento</label>
+							    <div class="col-sm-10">
+							      	<select name="documentType" class="form-control">
+							      	  <option value="NONE">Selecciona el tipo de documento</option>	
+									  <option value="EXCEL">EXCEL</option>
+									  <option value="PWPOINT">POWER POINT</option>
+									  <option value="PDF">PDF</option>
+									</select>
 							    </div>
 							  </div>
 							  <div class="form-group">
@@ -334,6 +353,24 @@
 								    <label  class="col-sm-2 control-label">Resumen</label>
 								    <div class="col-sm-10">
 								      <textarea name="inputSummary" class="form-control" rows="3" ><?php echo $objNotice->summary; ?></textarea>
+								    </div>
+								  </div>
+								   <div class="form-group">
+								    <label for="inputTitle" class="col-sm-2 control-label">Url Documento</label>
+								    <div class="col-sm-10">
+								      <input type="text" name="urlDocument"  class="form-control" id="inputTitle" placeholder="Link documento adjunto" 
+								      	value="<?php echo $objNotice->urlDocumentAtach; ?>">
+								    </div>
+								  </div>
+								  <div class="form-group">
+								    <label for="inputSection" class="col-sm-2 control-label">Tipo de documento</label>
+								    <div class="col-sm-10">
+								      	<select name="documentType" class="form-control">
+								      	  <option value="NONE" <?php if ("NONE" == $objNotice->documentType) {echo 'selected';} ?> >Selecciona el tipo de documento</option>
+										  <option value="EXCEL" <?php if ("EXCEL" == $objNotice->documentType) {echo 'selected';} ?> >EXCEL</option>
+										  <option value="PWPOINT" <?php if ("PWPOINT" == $objNotice->documentType) {echo 'selected';} ?> >POWER POINT</option>
+										  <option value="PDF" <?php if ("PDF" == $objNotice->documentType) {echo 'selected';} ?> >PDF</option>
+										</select>
 								    </div>
 								  </div>
 								  <div class="form-group">
