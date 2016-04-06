@@ -73,6 +73,11 @@
 			$this->pushListNotice();
 		}
 
+		public function editStatusNotice($id, $status){
+			$this->query = "CALL sp_update_status_notice (".$id.", '".$status."')";
+			$this->executeSingleQuery();
+		}
+
 		private function pushListNotice(){
 
 			if(count($this->rows) > 0){

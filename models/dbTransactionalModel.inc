@@ -29,13 +29,13 @@
 	}
 
 	protected function executeSingleQuery(){
-		if($_POST){
+		//if($_POST){
 			$this->openConnection();
-			$this->conn->query($this->$query);
+			$this->conn->query($this->query);
 			$this->closeConnection();
-		}else{
-			$this->message = 'Método no permitido';
-		}
+		//}else{
+		//	$this->message = 'Método no permitido';
+		//}
 	}
 
 	protected function getResultFromQuery(){

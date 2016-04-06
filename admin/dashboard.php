@@ -144,10 +144,16 @@
 		  							<th>Titulo/Resumen</th>
 		  						</tr>
 		  						<tr>
-		  							<?php  								
+		  							<?php
+		  								$statusLocal = "activar";
+		  								$statusEnvio = "active";
+		  								if ($objNotice->status == 'active'){
+		  									$statusLocal = "desactivar";
+		  									$statusEnvio = "deactive";
+		  								}  								
 		  								echo '<td>';
 			  							echo '	<ul>';
-			  							echo '		<li><a href="Activar">Activar</a></li>';
+			  							echo '		<li><a href="xt_editaStatusNotice.php?noticeId='.$objNotice->id.'&status='.$statusEnvio.'">'.$statusLocal.'</a></li>';
 			  							echo "		<li><a href=\"#\" ng-click=\"editNota('".$objNotice->urlImageMain."','".$objNotice->urlImageDetail."');\" data-toggle=\"modal\" data-target=\"#myModalEdit\" >Modificar</a></li>";
 			  							echo '		<li><a href="#"  data-toggle="modal" data-target="#myModal">Ver Imagen</a></li>';
 			  							echo '	</ul>';

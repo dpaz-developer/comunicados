@@ -23,6 +23,9 @@
 		public function  editNotice($id, $seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $userId,$urlDocumentType, $documentType){
 			$this->objNoticeService->editNotice($id, $seccionId, $title, $summary, $urlImgListado, $urlImgInterior, $userId,$urlDocumentType, $documentType);
 		}
+		public function editStatusNotice($id, $status){
+			$this->objNoticeService->editStatusNotice($id, $status);
+		}
 
 		
 
